@@ -1,0 +1,375 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+  /*Background Color*/
+  --primary-color: #323232;
+  --secondary-color:#957C3D;
+  --bg-white: #fff;
+  --bg-black: #000;
+  --gradient: linear-gradient(to right,#957C3D 25%, #323232 100%), radial-gradient(circle at top left,  #957C3D,#323232);
+
+  /*Text Color*/
+  --primary-text:  #323232;
+  --secondary-text: #957C3D;
+  --text-white: #fff;
+  --text-black: #000;
+  
+
+  /*font family */
+  --primary-font: 'poppins','lato', 'sans-serif';
+  --secondary-font: 'loboto', 'sans-serif';
+  
+}
+
+*{
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #E7C8A2;
+}
+
+
+#home-content{
+ padding: 50px 0;
+}
+
+/* NAV_BAR*/
+.navbar{
+  overflow: hidden;
+}
+.navbar-brand{
+  font-size: 22px;
+  font-weight:700;
+  color: var(--bg-white);
+  transition: 0.3s ease;
+  font-family: var(--secondary-font);
+
+
+}
+
+.navbar-brand:hover{
+  color:#957C3D;
+  text-shadow: 0 0 25px #957C3D,
+              0 0 50px #957C3D;
+  transform:scale(1.1) ;
+}
+.navbar .navbar-toggler:focus{
+  box-shadow: none;
+
+}
+.navbar .nav-item .nav-link{
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text-white);
+  
+  
+}
+.navbar .nav-item .nav-link.active,
+.navbar .nav-item .nav-link:hover{
+  color: var(--secondary-text);
+
+}
+                            /*HOME CONTENT*/
+
+/*LEFT_CONTENT*/
+a{
+  text-decoration: none;
+}
+.content-left{
+  margin-top: 200px;
+}
+h1{
+  font-family: var(--primary-font);
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 70px;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+}
+h3{
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 15px;
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+}
+
+h4{
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--primary-color);
+  padding-top:5px;
+}
+
+h5{
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  padding-left: 5px;
+  
+}
+
+
+/* General container styling */
+.animation {
+  overflow: hidden;
+  display: flex;
+  height: 60px; /* Height of one text line */
+}
+
+/* Animating text */
+.type-text {
+  animation: text-animation 5s infinite;
+}
+
+/* Keyframes for text animation */
+@keyframes text-animation {
+  0%, 15% {
+    transform: translateY(0); /* Show the first line */
+  }
+  35%, 60% {
+    transform: translateY(-90px); /* Move to show the second line */
+  }
+  75%, 100% {
+    transform: translateY(0); /* Reset to the first line */
+  }
+}
+
+/* Apply animation delays to each text line */
+.text-line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.text-line:nth-child(2) {
+  animation-delay: 2s; /* Half of the total animation duration */
+}
+
+/* Optional: Style individual text lines */
+.text-line {
+  line-height:65px; /* Match the height for proper alignment */
+}
+
+p{
+  color: var(--primary-color);
+  font-size: 20px;
+  line-height: 15x;
+  font-weight: 400;
+  text-align: justify;  /* For Edge */
+  
+  padding-left: 5px;
+  font-family: var(--secondary-font);
+}
+.main-btn{
+  display: inline-block;
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 46px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 0 50px;
+  margin: 0 5px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+.main-btn:active{
+  transform: scale(0.85); /* Slightly shrink the button on click */
+
+}
+.secondary-btn{
+  background-image: var(--gradient);
+  color: var(--bg-white);
+  border-color: var(--secondary-color);
+}
+.secondary-btn:hover{
+  background: var(--gradient);
+  color: var(--text-white);
+}
+
+
+.primary-btn{
+  background-image: var(--gradient);
+  color: var(--text-white);
+  
+}
+
+/* Circular Background */
+.banner_wrapper .row::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: -250px; /* Adjust the position of the circle */
+  transform: translateY(-50%);
+  width: 450px; /* Circle width */
+  height: 450px; /* Circle height */
+  border-radius: 50%; /* Makes it a circle */
+  background: var(--bg-white); /* Gradient color */
+  z-index: -1; /* Ensures it stays behind the row content */
+}
+/* Small Circle at the Top */
+.banner_wrapper .row::after {
+  content: "";
+  position: absolute;
+  top: 10%; /* Adjust top position for the smaller circle */
+  left: 35%; /* Adjust left position for the smaller circle */
+  width: 100px; /* Smaller circle width */
+  height: 100px; /* Smaller circle height */
+  border-radius: 50%; /* Makes it a circle */
+  background: var(--bg-white); /* Gradient color */
+  z-index: -1; /* Keep it behind content */
+}
+
+                                                    /*SECOND_CONTENT*/
+/* Parent container for alignment */
+.content-right{
+  display: flex;
+  width: 100%;
+}
+.imgbox {
+  position: relative;
+  width: 600px; /* Fixed width */
+  height: 600px; /* Fixed height */
+  overflow: hidden; /* Ensures that the images do not overflow outside the container */
+}
+/* Splash Image (Background Image) */
+#splash {
+  position: relative; /* Positioned relative to the parent container */
+  top: 0%;
+  right: 0%;
+  filter: saturate(200%); /* Optional filter effect */
+   /* Ensures the image covers the container without distorting */
+  filter: saturate(200%); /* Optional filter effect */
+  transform: translate(50%, -50%);
+  animation: animateSplash 4s ease-in-out infinite; /* Smooth animation */
+}
+
+/* Keyframes for Splash Animation */
+@keyframes animateSplash {
+  0%, 100% {
+    transform: scale(1) rotate(0deg); /* Default position */
+  }
+  50% {
+    transform: scale(1.05) rotate(-2deg); /* Slight zoom and rotation */
+  }
+}
+
+/* Overlay Image (Foreground Image) */
+#overlay {
+  position: absolute; /* Positioned directly over the splash image */
+  top: 0%;
+  right:5%;
+  object-fit: cover; /* Ensures the image covers the container without distorting */
+  animation: animateOverlay 4s ease-in-out infinite; /* Smooth animation for the overlay */
+  
+}
+/* Keyframes for Overlay Animation */
+@keyframes animateOverlay {
+  0%, 100% {
+    transform: translate(0, 0) scale(1); /* Default position */
+  }
+  50% {
+    transform: translate(10px, -0px) scale(1.05); /* Slight movement and scaling */
+  }
+}
+
+                                                                /*About me*/
+#about-content{
+  padding: 20px 0;
+}
+#project-content{
+  padding: 40px 0;
+}
+
+.tab-links{
+  margin-right: 50px;
+  font-size: 22px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  font-family: var(--primary-font);
+  color: var(--primary-text);
+  
+}
+.tab-links::after{
+  content: ''; 
+  width: 0;
+  height: 3px;
+  background: var(--secondary-color);
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+.tab-links.active-link::after{
+  width:50%;
+}
+.tab-contents li{
+  list-style: none;
+  margin-top: 5px;
+  font-weight: 300;
+  font-family: var(--primary-font);
+    
+}
+.tab-contents li span{
+  color:var(--primary-text);
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--primary-font);
+}
+.tab-contents li{
+  list-style: none;
+  margin-top: 5px;
+  font-weight: 300;
+  font-family: var(--primary-font);
+    
+}
+.tab-contents.active-tab{
+  display: block;
+}
+.tab-contents{
+  display: none;
+  
+}
+.tab-contents.active-tab .contact-btn {
+  display: inline-block; /* Show when active-tab is applied */
+}
+
+.skills-card{
+  background-color:#DDD0C8;
+  border-radius: 10px;
+  padding: 20px 0;
+  padding: 10px;
+  margin-right: 10px;
+ 
+}
+.skills-card:hover{
+  background-color: #957C3D;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.skill-image-text{
+  font-family: var(--primary-font);
+}
+                                                          /*My Footer*/
+.footerBrand{
+  writing-mode: vertical-rl; /* Makes the text vertical */
+  transform: rotate(180deg); /* Rotates the text to make it readable */
+  color: #fff;
+  font-size: 4vh; /* Adjust font size */
+  text-shadow: 4px 3px 1px #323232;
+  mix-blend-mode: screen;
+}
+
+.footer-highlight {
+  color: white;
+}
